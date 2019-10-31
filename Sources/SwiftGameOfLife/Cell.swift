@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Cell{
+public class Cell{
     var x:Int
     var y:Int
     var state:CellState
@@ -21,6 +21,6 @@ class Cell{
     }
 }
 
-enum CellState{
+public enum CellState{
     case alive, dead
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 //MARK: - RULE PROTOCOL
-protocol Rule {
+public protocol Rule {
     var name: String { get set }
     var startState: CellState { get set }
     var endState: CellState { get set }
@@ -18,10 +18,10 @@ protocol Rule {
 }
 
 //MARK: - COUNT RULE
-class CountRule: Rule {
-    var name: String
-    var startState: CellState
-    var endState: CellState
+public class CountRule: Rule {
+    public var name: String
+    public var startState: CellState
+    public var endState: CellState
     var count: Int
     var type: CountRuleType
     
@@ -33,7 +33,7 @@ class CountRule: Rule {
         self.type = type
     }
     
-    func apply(state:CellState, neighbors:[Cell]) -> CellState{
+    public func apply(state:CellState, neighbors:[Cell]) -> CellState{
         var newState:CellState = state
         if state == self.startState{
             if (self.type == .greaterThan && neighbors.count > self.count) ||
@@ -48,6 +48,6 @@ class CountRule: Rule {
     }
 }
 
-enum CountRuleType{
+public enum CountRuleType{
     case greaterThan, lessThan, equals
 }

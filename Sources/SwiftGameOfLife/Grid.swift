@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Grid{
+public class Grid{
     var width:Int
     var height:Int
     var cells: [[Cell]]
