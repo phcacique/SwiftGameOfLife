@@ -14,7 +14,7 @@ public class Grid{
     var cells: [[Cell]]
     var rules: [Rule] = []
     
-    init(width:Int = 10, height:Int = 10) {
+    public init(width:Int = 10, height:Int = 10) {
         self.width = width
         self.height = height
         self.cells = []
@@ -22,7 +22,7 @@ public class Grid{
         initEmptyGrid(width, height)
     }
     
-    func initEmptyGrid(_ width: Int, _ height: Int) {
+    public func initEmptyGrid(_ width: Int, _ height: Int) {
         cells = []
         for i in 0..<width{
             var row:[Cell] = []
@@ -33,7 +33,7 @@ public class Grid{
         }
     }
     
-    func getLiveNeighbors(cell:Cell) -> [Cell] {
+    public func getLiveNeighbors(cell:Cell) -> [Cell] {
         let i:Int = cell.x
         let j:Int = cell.y
         let state:CellState = .alive
@@ -75,23 +75,23 @@ public class Grid{
         return neighbors
     }
     
-    func getCellState(i:Int, j:Int) -> CellState{
+    public func getCellState(i:Int, j:Int) -> CellState{
         return self.cells[i][j].state
     }
     
-    func setCellState(i:Int, j:Int, state:CellState){
+    public func setCellState(i:Int, j:Int, state:CellState){
         self.cells[i][j].state = state
     }
     
-    func clear(){
+    public func clear(){
         initEmptyGrid(self.width, self.height)
     }
     
-    func addRule(_ rule:Rule){
+    public func addRule(_ rule:Rule){
         self.rules.append(rule)
     }
     
-    func applyRules(){
+    public func applyRules(){
         var newCells = cells
         for i in 0..<width{
             for j in 0..<height{

@@ -25,7 +25,7 @@ public class CountRule: Rule {
     var count: Int
     var type: CountRuleType
     
-    init(name:String, startState:CellState, endState:CellState, count:Int, type:CountRuleType = .greaterThan) {
+    public init(name:String, startState:CellState, endState:CellState, count:Int, type:CountRuleType = .greaterThan) {
         self.name = name
         self.startState = startState
         self.endState = endState

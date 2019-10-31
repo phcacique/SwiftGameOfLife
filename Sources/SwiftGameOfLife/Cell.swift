@@ -14,7 +14,7 @@ public class Cell{
     var state:CellState
     var liveNeighbors: [Cell] = []
     
-    init(x:Int, y:Int, state:CellState = .dead) {
+    public init(x:Int, y:Int, state:CellState = .dead) {
         self.x = x
         self.y = y
         self.state = state
