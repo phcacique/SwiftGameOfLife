@@ -14,13 +14,13 @@ public class Grid{
     public var cells: [[Cell]]
     public var rules: [Rule] = []
     
-    public init(width:Int = 10, height:Int = 10, isRandom:Bool = false) {
+    public init(width:Int = 10, height:Int = 10, isRandom:Bool = false, proportion:Int = 5) {
         self.width = width
         self.height = height
         self.cells = []
         
         if isRandom{
-            initRandomGrid(width, height)
+            initRandomGrid(width, height, proportion)
         } else {
             initEmptyGrid(width, height)
         }
@@ -37,12 +37,12 @@ public class Grid{
         }
     }
     
-    public func initRandomGrid(_ width: Int, _ height: Int) {
+    public func initRandomGrid(_ width: Int, _ height: Int, _ proportion:Int = 5) {
         cells = []
         for i in 0..<width{
             var row:[Cell] = []
             for j in 0..<height{
-                let state:CellState = (Int.random(in: 0 ..< 10)>7) ? .dead : .alive
+                let state:CellState = (Int.random(in: 0 ..< 10)>proportion) ? .dead : .alive
                 row.append(Cell(x: i, y: j , state: state))
             }
             cells.append(row)
