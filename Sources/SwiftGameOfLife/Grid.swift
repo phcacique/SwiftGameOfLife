@@ -9,10 +9,10 @@
 import Foundation
 
 public class Grid{
-    var width:Int
-    var height:Int
-    var cells: [[Cell]]
-    var rules: [Rule] = []
+    public var width:Int
+    public var height:Int
+    public var cells: [[Cell]]
+    public var rules: [Rule] = []
     
     public init(width:Int = 10, height:Int = 10) {
         self.width = width

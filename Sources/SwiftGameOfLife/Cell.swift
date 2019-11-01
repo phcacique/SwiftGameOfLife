@@ -9,10 +9,10 @@
 import Foundation
 
 public class Cell{
-    var x:Int
-    var y:Int
-    var state:CellState
-    var liveNeighbors: [Cell] = []
+    public var x:Int
+    public var y:Int
+    public var state:CellState
+    public var liveNeighbors: [Cell] = []
     
     public init(x:Int, y:Int, state:CellState = .dead) {
         self.x = x
