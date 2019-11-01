@@ -33,6 +33,18 @@ public class Grid{
         }
     }
     
+    public func initRandomGrid(_ width: Int, _ height: Int) {
+        cells = []
+        for i in 0..<width{
+            var row:[Cell] = []
+            for j in 0..<height{
+                let state:CellState = (Int.random(in: 0 ..< 10)>4) ? .dead : .alive
+                row.append(Cell(x: i, y: j , state: .dead))
+            }
+            cells.append(row)
+        }
+    }
+    
     public func getLiveNeighbors(cell:Cell) -> [Cell] {
         let i:Int = cell.x
         let j:Int = cell.y
