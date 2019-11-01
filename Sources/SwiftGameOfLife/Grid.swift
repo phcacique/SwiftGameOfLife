@@ -42,7 +42,7 @@ public class Grid{
         for i in 0..<width{
             var row:[Cell] = []
             for j in 0..<height{
-                let state:CellState = (Int.random(in: 0 ..< 10)>4) ? .dead : .alive
+                let state:CellState = (Int.random(in: 0 ..< 10)>7) ? .dead : .alive
                 row.append(Cell(x: i, y: j , state: state))
             }
             cells.append(row)
