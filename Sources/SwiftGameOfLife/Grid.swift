@@ -14,12 +14,16 @@ public class Grid{
     public var cells: [[Cell]]
     public var rules: [Rule] = []
     
-    public init(width:Int = 10, height:Int = 10) {
+    public init(width:Int = 10, height:Int = 10, isRandom:Bool = false) {
         self.width = width
         self.height = height
         self.cells = []
         
-        initEmptyGrid(width, height)
+        if isRandom{
+            initRandomGrid(width, height)
+        } else {
+            initEmptyGrid(width, height)
+        }
     }
     
     public func initEmptyGrid(_ width: Int, _ height: Int) {
